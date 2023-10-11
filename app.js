@@ -73,7 +73,7 @@ function show_home(){
     tag("canvas").innerHTML=` 
     <div class="center-screen">
     
-    <p><img height="${window.innerHeight * .6}" src="images/motel_logo.jpeg"></p>
+    <p><img height="${window.innerHeight}" src="images/motel_logo.jpeg"></p>
     <div style="text-align:center"></div>
     
     
