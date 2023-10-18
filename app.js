@@ -47,7 +47,7 @@ const authenticated_menu=[
     //This menu item adds the menu item for updating an inventory count. Notice how a parameter is passed to the "ice_cream_inventory" function
     {label:"Rooms",home:"Inventory",function:"navigate({fn:'record_inventory'})"},
     //the remaining menu items are added
-    {label:"Ice Cream Inventory Summary",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
+    {label:"Reservations",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
 
     {label:"Employee List",function:"navigate({fn:'employee_list'})"},
     {label:"Admin Tools",id:"menu2", roles:["manager","owner","administrator"], menu:[
@@ -331,7 +331,7 @@ async function show_inventory_summary(params){
 
         console.log("response", response)
         //build the HMTL heading for the report
-        tag("inventory-title").innerHTML=`<h2>Ice Cream Inventory Summary</h2>`
+        tag("inventory-title").innerHTML=`<h2>Reservations</h2>`
 
 
         //Build the table to display the report. The columns of the table are: Flavor, the stores available to the user, and the total inventory. Since only the owner is given the option to view inventory counts (see the autheticated_user global variable), all stores will be shown in the report.
