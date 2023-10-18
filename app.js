@@ -43,13 +43,14 @@ const authenticated_menu=[
         {label:"My Requests",function:"navigate({fn:'show_time_off'})"}, 
     ]},
     //This menu item allows the user to add additional users. Note the "roles" property of the object. Only users with the role of "manager", "owner", or "administrator" will see this menu item. User roles are not heirachical. All user types you wish to see a menu item must be listed in the elements of the array.
-    {label:"Add Employee",function:"navigate({fn:'create_account'})", roles:["manager","owner","administrator"]}, 
+    {label:"Add Employee",function:"navigate({fn:'create_account'})", roles:["manager","owner","administrator"]},
+    //This menu item creates the tab for users to access reports
+    {label:"Reports",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
     //This menu item adds the menu item for updating an inventory count. Notice how a parameter is passed to the "ice_cream_inventory" function
     {label:"Rooms",home:"Inventory",function:"navigate({fn:'record_inventory'})"},
     //the remaining menu items are added
     {label:"Reservations",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
-    //Creating the Reports tab
-    {label:"Reports",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
+    
 
 
     {label:"Employee List",function:"navigate({fn:'employee_list'})"},
