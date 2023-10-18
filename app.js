@@ -49,7 +49,7 @@ const authenticated_menu=[
     //the remaining menu items are added
     {label:"Reservations",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
     //Creating the Reports tab
-     {label:"Reports",home:"Inventory",function:"navigate({fn:'show_reports_summary'})", roles:["owner","administrator"]},
+    //{label:"Reports",home:"Inventory",function:"navigate({fn:'show_reports_summary'})", roles:["owner","administrator"]},
 
 
     {label:"Employee List",function:"navigate({fn:'employee_list'})"},
@@ -316,24 +316,24 @@ async function show_inventory_summary(params){
     `
 
     //generating the Reports page. As of 10/18/2023, this is simply a copy of inventory page
-    async function show_reports_summary(params){
-    console.log('in show_reports_summary')
-    //this function is used both the record inventory counts and to build a summary report. The "style" property of the params sent to the function determines whether the function is in "count" mode or "summary" mode. Also, if the user has access to multiple stores, they will be presented with the option to select the store they wish to work with.
+    // async function show_reports_summary(params){
+    //     console.log('in show_reports_summary')
+    // //this function is used both the record inventory counts and to build a summary report. The "style" property of the params sent to the function determines whether the function is in "count" mode or "summary" mode. Also, if the user has access to multiple stores, they will be presented with the option to select the store they wish to work with.
 
-    if(!logged_in()){show_home();return}//in case followed a link after logging out. This prevents the user from using this feature when they are not authenticated.
+    // if(!logged_in()){show_home();return}//in case followed a link after logging out. This prevents the user from using this feature when they are not authenticated.
 
-    //First we hide the menu
-    hide_menu()
-    //This function is set up recursively to build the page for working with inventory. The first time the function is called, the HTML shell is created for displaying either the inventory form for recording the count or the inventory report. Note that this will only be built if there is a "style" property set when the function is called. Once the shell is created, the function is called again to either built the form for recording an inventory count or create the summary report.
-    //building the HTML shell
-    tag("canvas").innerHTML=` 
-        <div class="page">
-            <div id="inventory-title" style="text-align:center"><h2>Reports</h2></div>
-            <div id="inventory-message" style="width:100%"></div>
-            <div id="inventory_panel"  style="width:100%">
-            </div>
-        </div>  
-    `
+    // //First we hide the menu
+    // hide_menu()
+    // //This function is set up recursively to build the page for working with inventory. The first time the function is called, the HTML shell is created for displaying either the inventory form for recording the count or the inventory report. Note that this will only be built if there is a "style" property set when the function is called. Once the shell is created, the function is called again to either built the form for recording an inventory count or create the summary report.
+    // //building the HTML shell
+    // tag("canvas").innerHTML=` 
+    //     <div class="page">
+    //         <div id="inventory-title" style="text-align:center"><h2>Reports</h2></div>
+    //         <div id="inventory-message" style="width:100%"></div>
+    //         <div id="inventory_panel"  style="width:100%">
+    //         </div>
+    //     </div>  
+    // `
     
     //loading user data. Any user can record an inventory count, so we don't need to check their role at this point. If a user is associated with more than one store and they wish to record an inventory count, they will be prompted to select the store they want to work with.
 
