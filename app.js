@@ -191,7 +191,7 @@ async function record_inventory(params){
             window.cols={}
             console.log("response", response)
             // build the HTML header for the page identifying the store for which the counts will be recorded
-            tag("inventory-title").innerHTML=`<h2>${store_list()[params.store]} Room description</h2>`
+            tag("inventory-title").innerHTML=`<h2>${store_list()[params.store]} Room Description</h2>`
             const html=["Fill in every row in this section."]
             //build the table for the form used to record the counts.
             const header=[`
