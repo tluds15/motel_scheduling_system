@@ -49,7 +49,7 @@ const authenticated_menu=[
     //the remaining menu items are added
     {label:"Reservations",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
     //Creating the Reports tab
-    //{label:"Reports",home:"Inventory",function:"navigate({fn:'show_reports_summary'})", roles:["owner","administrator"]},
+    {label:"Reports",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
 
 
     {label:"Employee List",function:"navigate({fn:'employee_list'})"},
