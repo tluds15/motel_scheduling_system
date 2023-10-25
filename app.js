@@ -159,7 +159,7 @@ async function record_inventory(params){
             })
         }else{
             //We get here if the user is associated with more than 1 store. We build a form to have the user select the store they wish to work with.
-            const html=['<form>Store: <select name="store">']
+            const html=['<form>Hotel Location: <select name="store">']
             for(store of user_data.store){
                 html.push(`<option value="${store}">${store_list()[store]}</option>`)
             }
