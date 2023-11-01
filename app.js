@@ -94,6 +94,49 @@ function get_user_name(){
     return data.first_name + " " + data.last_name
 }
 
+async function show_tasks(){
+    // create HTML div for data
+ 
+    tag("canvas").innerHTML = `
+    <div class="page">
+ 
+    <h2>Tasks Last</h2>
+    <div id="task_list_panel">
+    <i class="fas fa-spinner fa-pulse"></i>
+    </div>
+    </div>
+    
+    `
+ 
+    const response = await server_request({mode:"get_tasks"})
+ 
+    if (response.status==='success'){
+        //we got data back
+ 
+        const html = ['<table border="1"><tr>']
+        html.push('<th>Description</th>')
+        html.push('<th>Complete</th>')
+        html.push('</tr>')
+ 
+        for(const record of response.records){
+            html.push('<tr>')
+            html.push(`<td>${record.fields.Description}</td>`)
+            html.push(`<td>${record.fields.Complete}</td>`)
+            html.push('</tr>')
+        }
+ 
+ 
+        tag("task_list_panel").innerHTML = html.join("")
+ 
+    }else{
+        tag("task_list_panel").innerHTML = "There was an error getting the task data"
+    }
+ 
+ 
+}
+
+
+
 async function show_locations(){
     //This function demonstrates how to render a view that is created in Airtable. The list of locations is a view of the Store table in airtable. It is shared in Airtable. The ID of the share is all that is needed to display the share embedded in this webpage. Generally Airtable shared items are visible by anyone with the link or id, so any data that must be secured should not be rendered using this method. However, it is a quick and easy way to display data stored in airtable.
     const width = 400
