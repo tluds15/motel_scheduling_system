@@ -122,8 +122,8 @@ async function show_rooms(){
  
         for(const record of response.records){
             html.push('<tr>')
-            html.push(`<td>${record.fields.Description}</td>`)
-            html.push(`<td>${record.fields.Complete}</td>`)
+            html.push(`<td>${record.fields.Room}</td>`)
+            html.push(`<td>${record.fields.Beds}</td>`)
             html.push('</tr>')
         }
  
