@@ -100,7 +100,7 @@ async function show_rooms(){
     tag("canvas").innerHTML = `
     <div class="page">
  
-    <h2>Tasks Last</h2>
+    <h2>Room List</h2>
     <div id="task_list_panel">
     <i class="fas fa-spinner fa-pulse"></i>
     </div>
