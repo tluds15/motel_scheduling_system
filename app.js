@@ -47,7 +47,7 @@ const authenticated_menu=[
     //This menu item creates the tab for users to access reports
     {label:"Reports",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
     //This menu item adds the menu item for updating an inventory count. Notice how a parameter is passed to the "ice_cream_inventory" function
-    {label:"Rooms",home:"Inventory",function:"navigate({fn:'record_inventory'})"},
+    {label:"Rooms",home:"Inventory",function:"navigate({fn:'show_rooms'})"},
     //the remaining menu items are added
     {label:"Reservations",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
     
@@ -94,7 +94,7 @@ function get_user_name(){
     return data.first_name + " " + data.last_name
 }
 
-async function show_tasks(){
+async function show_rooms(){
     // create HTML div for data
  
     tag("canvas").innerHTML = `
