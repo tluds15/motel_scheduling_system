@@ -114,8 +114,10 @@ async function show_rooms(){
         //we got data back
  
         const html = ['<table border="1"><tr>']
-        html.push('<th>Description</th>')
-        html.push('<th>Complete</th>')
+        html.push('<th>Room Name</th>')
+        html.push('<th>Beds</th>')
+        html.push('<th>Location</th>')
+        html.push('<th>Image</th>')
         html.push('</tr>')
  
         for(const record of response.records){
