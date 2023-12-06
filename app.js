@@ -109,6 +109,7 @@ async function show_rooms(){
     `
  
     const response = await server_request({mode:"get_tasks"})
+    console.log(response)
  
     if (response.status==='success'){
         //we got data back
