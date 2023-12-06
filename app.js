@@ -126,7 +126,8 @@ async function show_rooms(){
             html.push(`<td>${record.fields.Room}</td>`)
             html.push(`<td>${record.fields.Beds}</td>`)
             html.push(`<td>${record.fields.Location}</td>`)
-            html.push(`<td><a href="${record.fields.url}" target="_blank">Click to see room</a></td>`)
+            //html.push(`<td><a href="${record.fields.url}" target="_blank">Click to see room</a></td>`)
+            html.push(`<td><link src="${record.fields.url}" target="_blank"></td>`)
             html.push('</tr>')
         }
  
