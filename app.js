@@ -126,7 +126,7 @@ async function show_rooms(){
             html.push(`<td>${record.fields.Room}</td>`)
             html.push(`<td>${record.fields.Beds}</td>`)
             html.push(`<td>${record.fields.Location}</td>`)
-            html.push(`<td>${record.fields.url}</td>`)
+            html.push(`<td><img src="${record.fields.url}"></td>`)
             html.push('</tr>')
         }
  
