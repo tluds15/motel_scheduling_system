@@ -45,7 +45,7 @@ const authenticated_menu=[
     //This menu item allows the user to add additional users. Note the "roles" property of the object. Only users with the role of "manager", "owner", or "administrator" will see this menu item. User roles are not heirachical. All user types you wish to see a menu item must be listed in the elements of the array.
     {label:"Add Employee",function:"navigate({fn:'create_account'})", roles:["manager","owner","administrator"]},
     //This menu item creates the tab for users to access reports
-    {label:"Reports",home:"Inventory",function:"navigate({fn:'show_inventory_summary'})", roles:["owner","administrator"]},
+    {label:"Reports",home:"Inventory",function:"navigate({fn:'show_report'})", roles:["owner","administrator"]},
     //This menu item adds the menu item for updating an inventory count. Notice how a parameter is passed to the "ice_cream_inventory" function
     {label:"Rooms",home:"Inventory",function:"navigate({fn:'show_rooms'})"},
     //the remaining menu items are added
@@ -87,6 +87,24 @@ function show_home(){
     //The navigation menu is hidden (the three parallel lines are show) when the homepage is rendered.
     hide_menu()
 }
+
+
+function show_report(){
+    
+    //the main page is rendered with the report. 
+
+    tag("canvas").innerHTML=` 
+    <div class="center-screen">
+    
+    <p><img height="${window.innerHeight}" src="images/hotel_report.jpg"></p>
+    <div style="text-align:center"></div>
+    
+    
+    </div>
+    `
+
+}
+
 
 function get_user_name(){
     //returns the user's first and last name. Used when building the navigation menu to be the label for the menu items related to maintaining the user. The get_user_data function reads the user information from the data cookie that is created when the user logs in.
