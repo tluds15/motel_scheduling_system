@@ -90,6 +90,15 @@ function show_home(){
 
 
 function show_report(){
+
+    tag("canvas").innerHTML=` 
+        <div class="page">
+            <div id="inventory-title" style="text-align:center"><h2>Reports</h2></div>
+            <div id="inventory-message" style="width:100%"></div>
+            <div id="inventory_panel"  style="width:100%">
+            </div>
+        </div>  
+    `
     
     //the main page is rendered with the report. 
 
