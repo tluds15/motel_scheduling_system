@@ -96,7 +96,7 @@ function show_report(){
     tag("canvas").innerHTML=` 
     <div class="center-screen">
     
-    <p><img height="${window.innerHeight}" src="images/hotel_report.jpg"></p>
+    <p><img height=50% src="images/hotel_report.jpg"></p>
     <div style="text-align:center"></div>
     
     
