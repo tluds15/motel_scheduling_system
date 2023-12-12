@@ -497,7 +497,7 @@ async function show_inventory_summary(params){
         tag("inventory_panel").innerHTML=` 
     <div class="center-screen">
     
-    <p><img height="${window.innerHeight}" src="images/Reservation.png"></p>
+    <p><img src="images/Reservations.png"></p>
     <div style="text-align:center"></div>
     
     
