@@ -494,10 +494,23 @@ async function show_inventory_summary(params){
         
     }else{
         //This executes if the data needed to create the form or report is not retrieved successfully. It is essentially an error message to the user.
-        tag("inventory_panel").innerHTML="Unable to get inventory list: " + response.message + "."        
+        tag("inventory_panel").innerHTML=` 
+    <div class="center-screen">
+    
+    <p><img height="${window.innerHeight}" src="images/Reservation.png"></p>
+    <div style="text-align:center"></div>
+    
+    
+    </div>
+    `        
     }
 
 }
+
+
+
+
+
 
 
 function add_buttons(row,col){
